@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Book Subscription Box</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo">BookBox</div>
+                <div class="menu-icon" onclick="toggleNavItems()">☰</div>
+                <div class="nav-items-container">
+                    <div class="nav-item" onclick="scrollToSection('subscribe-form')">Subskrybuj</div>
+                    <div class="nav-item" onclick="scrollToSection('survey')">Rozpocznij ankietę</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-content">
+
+        <section id="subscribe" class="subscribe">
+            <div class="motivational-text">
+                <p>Zanurz się w świecie fascynujących historii!<br>Odkryj nowe książki i doświadcz przygód każdego dnia.</p>
+            </div>
+            <button class="subscribe-button" onclick="scrollToSection('subscribe-form')">Subskrybuj</button>
+        </section>
+
+        <section id="gallery" class="gallery"></section>
+
+        <section id="survey" class="survey">
+            <h2>Ankieta</h2>
+            <p>Pytania dotyczące preferencji czytelniczych:</p>
+        
+            <div class="question">
+                <p>1. Jakie gatunki literackie preferujesz?</p>
+                <label class="genre-label">
+                    <input type="checkbox" name="genres" value="Fantastyka"> Fantastyka
+                </label>
+                <label class="genre-label">
+                    <input type="checkbox" name="genres" value="Kryminał"> Kryminał
+                </label>
+                <label class="genre-label">
+                    <input type="checkbox" name="genres" value="Romans"> Romans
+                </label>
+            </div>
+        
+            <div class="question">
+                <p>2. Jaki styl pisania preferujesz?</p>
+                <label class="writing-style-label">
+                    <input type="checkbox" name="writingStyle" value="Liryczny"> Liryczny
+                </label>
+                <label class="writing-style-label">
+                    <input type="checkbox" name="writingStyle" value="Obiektywny"> Obiektywny
+                </label>
+                <label class="writing-style-label">
+                    <input type="checkbox" name="writingStyle" value="Humorystyczny"> Humorystyczny
+                </label>
+                <label class="writing-style-label">
+                    <input type="checkbox" name="writingStyle" value="Biznes, ekonomia, marketing"> Biznes, ekonomia, marketing
+                </label>
+                <label class="writing-style-label">
+                    <input type="checkbox" name="writingStyle" value="Rozwój osobisty"> Rozwój osobisty
+                </label>
+            </div>
+                
+            <button onclick="showConfirmationPage()" class="approve">Zatwierdź</button>
+        </section>
+        
+
+        <section id="subscribe-form" class="subscribe-form">
+            <div class="first-subscribe-form">
+                <h2>Formularz subskrypcji</h2>
+                <label class="form-group">Zapisz się już teraz i otrzymuj regularne aktualizacje oraz ekskluzywne treści związane z naszym produktem.</label>
+                <label class="form-group">Bądź na bieżąco z nowościami i korzystaj z wyjątkowych ofert dostępnych tylko dla subskrybentów.</label>
+                <label class="form-group">Wszystko to za jedyne 20 $ miesięcznie!</label>
+            </div>
+            <div class="second-subscribe-form">
+                <form id="subscription-form" class="subscription-form">
+                    <div class="form-group">
+                        <label for="name">Imię:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="phone">Numer telefonu:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="email">Adres e-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="marketing-consent">Zgoda na przetwarzanie danych osobowych:</label>
+                        <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                    </div>
+        
+                    <button type="button" onclick="validateFormAndPurchaseSubscription()" class="subscribe-button">Zakup subskrypcję</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo">
+                    <p class="company-name">BookBox</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p onclick="copyToClipboard('bookbox@email.com')">Contact us: bookbox@email.com</p>
+                <p onclick="copyToClipboard('+123 456 789')">Phone: +123 456 789</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

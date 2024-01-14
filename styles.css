@@ -1,0 +1,362 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('bookshelf.jpg');
+    background-size: cover; /* Skaluje obrazek, aby pokrywał całe tło */
+    background-attachment: fixed; /* Zapobiega przewijaniu tła wraz ze stroną */
+    background-position: center; /* Wyśrodkowuje obrazek tła */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgb(255, 245, 200);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Ustala indeks warstwy dla elementu */
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10%;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.subscribe {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 100px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subscribe-form{
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 100px;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+
+}
+
+.first-subscribe-form {
+    gap: 10px;
+    font-weight: bold;
+
+}
+
+.approve {
+    background-color: rgb(255, 245, 200);
+    color: black;
+    padding: 15px 25px;
+    font-size: 1.5em;
+    border: 0px;
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.first-subscribe-form, .second-subscribe-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.survey, .form-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-items-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-item {
+    margin: 0 15px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out; /* Dodaje płynną animację zmiany koloru obramowania */
+}
+
+.nav-item:hover {
+    border-color: red;
+}
+
+.main-content {
+    padding: 50px 10%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 15% 10%;
+    gap: 10%;
+    display: flex;
+    grid-gap: 30px;
+    flex-direction: column;
+}
+
+.subscribe-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.writing-style-label, .genre-label {
+    display: inline-block;
+    width: 300px;
+    margin-right: 20px;
+}
+
+.writing-style-label, .genre-label input {
+    margin-right: 5px;
+}
+
+.subscription-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.nav-item-subscribe,
+.nav-item-survey {
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+footer {
+    background-color: rgb(255, 245, 200);
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-left {
+    flex-grow: 1;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.company-name {
+    font-weight: bold;
+}
+
+.motivational-text {
+    text-align: center;
+    font-size: 1.7em;
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .subscribe-form{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    header, nav, .subscribe, .survey, .form-section, .subscribe-form, .navbar, footer {
+        margin: 0 5%;
+    }
+
+    .main-content {
+        margin: 20% 5%;
+    }
+
+    .subscribe-button {
+        font-size: 2em;
+    }
+
+    .subscribe-form{
+        flex-direction: column;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .nav-items-container {
+        display: none;
+        flex-direction: row;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .nav-item {
+        display: flex;
+        margin: 5px 0;
+    }
+
+    .nav-items-container.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-item-subscribe,
+    .nav-item-survey {
+        display: inline-block;
+        margin: 5px;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    flex: 0 0 calc(20% - 2%);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.book.gallery-book {
+    width: 100%;
+    height: 0;
+    padding-top: 100%; 
+    position: relative;
+}
+
+.book {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Utrzymanie proporcji obrazu */
+}
+
+.lightbox-content {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+.book {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 16px;
+    margin-top: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+.lightbox-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 800px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .book {
+        width: 100%;
+        height: 100%; /* Utrzymanie aspektu obrazu jako kwadratu */
+        object-fit: cover; /* O braz wypełnił obszar i utrzymuje proporcje */
+    }
+}
